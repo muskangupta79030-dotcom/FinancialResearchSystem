@@ -1,0 +1,1284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Financial Research System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">AI</div>
+
+            <div>
+                <h1>FinResearch</h1>
+                <span>Multi-Agent System</span>
+            </div>
+        </div>
+
+        <nav class="nav">
+
+            <button class="nav-item active" data-section="dashboard">
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item" data-section="documents">
+                <span>▣</span>
+                Documents
+            </button>
+
+            <button class="nav-item" data-section="research">
+                <span>⌕</span>
+                Research Assistant
+            </button>
+
+            <button class="nav-item" data-section="comparison">
+                <span>⇄</span>
+                Comparison
+            </button>
+
+            <button class="nav-item" data-section="report">
+                <span>▤</span>
+                Financial Report
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="connection">
+
+                <span id="statusDot" class="status-dot offline"></span>
+
+                <div>
+                    <strong id="backendStatus">Checking...</strong>
+                    <small>Backend API</small>
+                </div>
+
+            </div>
+
+            <button id="seedBtn" class="secondary-btn">
+                Load Seed Documents
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+
+                <p class="eyebrow">
+                    FINANCIAL INTELLIGENCE
+                </p>
+
+                <h2 id="pageTitle">
+                    Dashboard
+                </h2>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <span class="api-badge">
+                    API: 127.0.0.1:8000
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="section active">
+
+            <div class="hero">
+
+                <div>
+
+                    <p class="eyebrow">
+                        MULTI-AGENT AI
+                    </p>
+
+                    <h3>
+                        Financial Research & Business Insights
+                    </h3>
+
+                    <p>
+                        Upload annual reports, extract financial metrics,
+                        identify potential red flags, research documents,
+                        compare companies and generate financial reports.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    data-go="documents"
+                >
+                    Upload Document →
+                </button>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span>
+                        Documents
+                    </span>
+
+                    <strong id="documentCount">
+                        —
+                    </strong>
+
+                    <small>
+                        Indexed / processed
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Agents
+                    </span>
+
+                    <strong>
+                        6
+                    </strong>
+
+                    <small>
+                        Active modules
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Vector DB
+                    </span>
+
+                    <strong>
+                        ChromaDB
+                    </strong>
+
+                    <small>
+                        Semantic retrieval
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Embeddings
+                    </span>
+
+                    <strong>
+                        384D
+                    </strong>
+
+                    <small>
+                        MiniLM model
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="content-grid">
+
+
+                <!-- PIPELINE -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                SYSTEM PIPELINE
+                            </p>
+
+                            <h3>
+                                Agent Architecture
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline">
+
+                        <div class="pipeline-item">
+
+                            <span>01</span>
+
+                            <div>
+                                <strong>
+                                    Document Agent
+                                </strong>
+
+                                <small>
+                                    PDF parsing & chunking
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="pipeline-item">
+
+                            <span>02</span>
+
+                            <div>
+
+                                <strong>
+                                    Extraction Agent
+                                </strong>
+
+                                <small>
+                                    Financial metric extraction
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="pipeline-item">
+
+                            <span>03</span>
+
+                            <div>
+
+                                <strong>
+                                    Red Flag Agent
+                                </strong>
+
+                                <small>
+                                    Financial risk indicators
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="pipeline-item">
+
+                            <span>04</span>
+
+                            <div>
+
+                                <strong>
+                                    Research Agent
+                                </strong>
+
+                                <small>
+                                    Semantic document research
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="pipeline-item">
+
+                            <span>05</span>
+
+                            <div>
+
+                                <strong>
+                                    Comparison Agent
+                                </strong>
+
+                                <small>
+                                    Cross-company analysis
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="pipeline-item">
+
+                            <span>06</span>
+
+                            <div>
+
+                                <strong>
+                                    Report Agent
+                                </strong>
+
+                                <small>
+                                    Executive report generation
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                QUICK ACTIONS
+                            </p>
+
+                            <h3>
+                                Start Analysis
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+                        <button
+                            class="action-card"
+                            data-go="documents"
+                        >
+
+                            <strong>
+                                Upload PDF
+                            </strong>
+
+                            <span>
+                                Process a financial document
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="action-card"
+                            data-go="research"
+                        >
+
+                            <strong>
+                                Ask Research Question
+                            </strong>
+
+                            <span>
+                                Search indexed documents
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="action-card"
+                            data-go="comparison"
+                        >
+
+                            <strong>
+                                Compare Companies
+                            </strong>
+
+                            <span>
+                                View financial metrics side-by-side
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="action-card"
+                            data-go="report"
+                        >
+
+                            <strong>
+                                Generate Report
+                            </strong>
+
+                            <span>
+                                Create an executive financial summary
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= DOCUMENTS ================= -->
+
+        <section
+            id="documents"
+            class="section"
+        >
+
+            <div class="section-intro">
+
+                <p class="eyebrow">
+                    DOCUMENT AGENT + EXTRACTION + RED FLAGS
+                </p>
+
+                <h3>
+                    Financial Document Processing
+                </h3>
+
+                <p>
+                    Upload an annual report and run the complete processing pipeline.
+                </p>
+
+            </div>
+
+
+            <div class="upload-panel">
+
+
+                <!-- DROP ZONE -->
+
+                <div
+                    id="dropZone"
+                    class="drop-zone"
+                >
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+                    <h3>
+                        Drop your PDF here
+                    </h3>
+
+                    <p>
+                        or choose a financial annual report from your device
+                    </p>
+
+
+                    <label class="primary-btn choose-btn">
+
+                        Choose PDF
+
+                        <input
+                            id="fileInput"
+                            type="file"
+                            accept=".pdf,application/pdf"
+                            hidden
+                        >
+
+                    </label>
+
+
+                    <p
+                        id="selectedFile"
+                        class="selected-file"
+                    >
+                        No file selected
+                    </p>
+
+                </div>
+
+
+
+                <!-- UPLOAD INFORMATION -->
+
+                <div class="upload-info">
+
+                    <h4>
+                        Processing Pipeline
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            PDF text extraction
+                        </li>
+
+                        <li>
+                            Text chunking
+                        </li>
+
+                        <li>
+                            Financial metric extraction
+                        </li>
+
+                        <li>
+                            Red-flag analysis
+                        </li>
+
+                        <li>
+                            384-dimensional embeddings
+                        </li>
+
+                        <li>
+                            ChromaDB vector storage
+                        </li>
+
+                    </ul>
+
+
+                    <button
+                        id="processBtn"
+                        class="primary-btn full-width"
+                        disabled
+                    >
+                        Process Document
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DOCUMENT RESULT -->
+
+            <div
+                id="documentResult"
+                class="result-area hidden"
+            >
+
+
+                <div class="result-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PROCESSING RESULT
+                        </p>
+
+                        <h3 id="resultFilename">
+                            Document
+                        </h3>
+
+                    </div>
+
+
+                    <span
+                        id="riskBadge"
+                        class="risk-badge"
+                    >
+                        Risk: —
+                    </span>
+
+                </div>
+
+
+
+                <!-- PIPELINE RESULT -->
+
+                <div
+                    id="pipelineResult"
+                    class="pipeline-result"
+                ></div>
+
+
+
+                <!-- METRICS -->
+
+                <div class="metrics-grid">
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Revenue
+                        </span>
+
+                        <strong id="metricRevenue">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Net Income
+                        </span>
+
+                        <strong id="metricNetIncome">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Operating Income
+                        </span>
+
+                        <strong id="metricOperatingIncome">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="content-grid">
+
+
+                    <!-- RED FLAGS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <p class="eyebrow">
+                                    RED FLAG AGENT
+                                </p>
+
+                                <h3>
+                                    Risk Analysis
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div id="redFlags"></div>
+
+                    </div>
+
+
+
+                    <!-- TECHNICAL DETAILS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <p class="eyebrow">
+                                    DOCUMENT PROCESSING
+                                </p>
+
+                                <h3>
+                                    Technical Details
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="processingDetails"
+                            class="details-list"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= RESEARCH ================= -->
+
+        <section
+            id="research"
+            class="section"
+        >
+
+            <div class="section-intro">
+
+                <p class="eyebrow">
+                    RESEARCH AGENT
+                </p>
+
+                <h3>
+                    Conversational Financial Research
+                </h3>
+
+                <p>
+                    Ask questions about information available in the indexed financial documents.
+                </p>
+
+            </div>
+
+
+
+            <div class="research-layout">
+
+
+                <!-- CHAT -->
+
+                <div class="panel chat-panel">
+
+                    <div
+                        id="chatMessages"
+                        class="chat-messages"
+                    >
+
+                        <div class="chat-message assistant">
+
+                            <div class="avatar">
+                                AI
+                            </div>
+
+                            <div class="message">
+
+                                <strong>
+                                    Financial Research Assistant
+                                </strong>
+
+                                <p>
+                                    Hello! Ask me something like
+                                    <em>
+                                        “What was Amazon's revenue in 2025?”
+                                    </em>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <form
+                        id="researchForm"
+                        class="chat-form"
+                    >
+
+                        <input
+                            id="researchInput"
+                            type="text"
+                            placeholder="Ask a financial research question..."
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            Ask
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- SOURCES -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                RETRIEVAL
+                            </p>
+
+                            <h3>
+                                Sources
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="researchSources"
+                        class="sources"
+                    >
+
+                        <p class="empty-state">
+                            Sources will appear here after a research query.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= COMPARISON ================= -->
+
+        <section
+            id="comparison"
+            class="section"
+        >
+
+            <div class="section-intro">
+
+                <p class="eyebrow">
+                    COMPARISON AGENT
+                </p>
+
+                <h3>
+                    Company Financial Comparison
+                </h3>
+
+                <p>
+                    Compare extracted financial metrics from two indexed annual reports.
+                </p>
+
+            </div>
+
+
+
+            <!-- COMPARISON FORM -->
+
+            <div class="panel">
+
+                <form
+                    id="comparisonForm"
+                    class="form-grid"
+                >
+
+
+                    <div class="form-group">
+
+                        <label for="company1">
+                            Company 1 / Filename
+                        </label>
+
+                        <input
+                            id="company1"
+                            type="text"
+                            placeholder="Amazon-2025-Annual-Report.pdf"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="company2">
+                            Company 2 / Filename
+                        </label>
+
+                        <input
+                            id="company2"
+                            type="text"
+                            placeholder="infosys-ar-25.pdf"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group full">
+
+                        <label for="comparisonQuery">
+                            Comparison Query
+                        </label>
+
+                        <input
+                            id="comparisonQuery"
+                            type="text"
+                            value="Compare revenue, net income and operating income in 2025"
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-actions full">
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            Compare Companies
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- COMPARISON RESULT -->
+
+            <div
+                id="comparisonResult"
+                class="result-area hidden"
+            >
+
+                <div class="result-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            COMPARISON RESULT
+                        </p>
+
+                        <h3 id="comparisonTitle">
+                            Financial Comparison
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="table-wrap">
+
+                    <table class="comparison-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Metric
+                                </th>
+
+                                <th id="company1Header">
+                                    Company 1
+                                </th>
+
+                                <th id="company2Header">
+                                    Company 2
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="comparisonTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <div class="summary-box">
+
+                    <h4>
+                        Analysis Summary
+                    </h4>
+
+                    <p id="comparisonSummary">
+                        —
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= REPORT ================= -->
+
+        <section
+            id="report"
+            class="section"
+        >
+
+            <div class="section-intro">
+
+                <p class="eyebrow">
+                    REPORT AGENT
+                </p>
+
+                <h3>
+                    Financial Report Generator
+                </h3>
+
+                <p>
+                    Generate an executive summary from a selected annual report.
+                </p>
+
+            </div>
+
+
+
+            <!-- REPORT FORM -->
+
+            <div class="panel">
+
+                <form
+                    id="reportForm"
+                    class="form-grid"
+                >
+
+
+                    <div class="form-group">
+
+                        <label for="reportCompany">
+                            Company Name
+                        </label>
+
+                        <input
+                            id="reportCompany"
+                            type="text"
+                            placeholder="Amazon"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="reportFilename">
+                            Document Filename
+                        </label>
+
+                        <input
+                            id="reportFilename"
+                            type="text"
+                            placeholder="Amazon-2025-Annual-Report.pdf"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-actions full">
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            Generate Report
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- REPORT RESULT -->
+
+            <div
+                id="reportResult"
+                class="result-area hidden"
+            >
+
+                <div class="result-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            GENERATED REPORT
+                        </p>
+
+                        <h3 id="reportTitle">
+                            Financial Report
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="report-card">
+
+
+                    <!-- EXECUTIVE SUMMARY -->
+
+                    <div class="report-section">
+
+                        <p class="eyebrow">
+                            EXECUTIVE SUMMARY
+                        </p>
+
+                        <p id="executiveSummary">
+                            —
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- KEY FINANCIALS -->
+
+                    <div class="report-section">
+
+                        <p class="eyebrow">
+                            KEY FINANCIALS
+                        </p>
+
+                        <div
+                            id="reportFinancials"
+                            class="metrics-grid"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- RED FLAGS -->
+
+                    <div class="report-section">
+
+                        <p class="eyebrow">
+                            RED FLAGS
+                        </p>
+
+                        <div id="reportRedFlags"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- ================= LOADING OVERLAY ================= -->
+
+<div
+    id="loadingOverlay"
+    class="loading-overlay hidden"
+>
+
+    <div class="loader-card">
+
+        <div class="spinner"></div>
+
+        <h3 id="loadingTitle">
+            Processing...
+        </h3>
+
+        <p id="loadingText">
+            Please wait while the agent pipeline runs.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= ALERT ================= -->
+
+<div
+    id="alertBox"
+    class="alert-box hidden"
+>
+
+    <span id="alertText"></span>
+
+    <button id="closeAlert">
+        ×
+    </button>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
