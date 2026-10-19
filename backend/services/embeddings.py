@@ -25,8 +25,7 @@ def generate_embeddings(chunks):
         chunks,
         batch_size=4,
         show_progress_bar=False,
-        convert_to_numpy=True,
-        normalize_embeddings=False
+        convert_to_numpy=True
     )
 
     return embeddings.tolist()
